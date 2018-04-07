@@ -9,7 +9,7 @@
     "dev:client": "webpack --config config/webpack.config.babel.js --mode=development --watch",
     "dev:server": "nodemon server/server.js",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:build": "webpack --config config/webpack.config.babel.js --mode=production"
+    "build": "webpack --config config/webpack.config.babel.js --mode=production"
   },
   "dependencies": {
     "express": "^4.16.3",

@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  log:
+    build: .
+    container_name: log
+    ports:
+      - "3000:3000"
+    restart: always
