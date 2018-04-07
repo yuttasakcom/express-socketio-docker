@@ -6,7 +6,7 @@ import App from './App'
 
 Vue.config.productionTip = false
 
-Vue.use(VueSocketIO, socketIOClient(process.env.SOCKET_CLIENT))
+Vue.use(VueSocketIO, socketIOClient(process.env.SOCKET_CLIENT, {'transports': ['websocket', 'polling']}))
 
 new Vue({
   el: '#app',
