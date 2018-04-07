@@ -2,9 +2,19 @@ version: '3'
 
 services:
 
+  nginx:
+    build: ./nginx
+    image: yuttasakcom/nginx-log:1.0.0
+    container_name: nginx
+    ports:
+      - "80:80"
+    restart: always
+
   log:
     build: .
+    image: log:1.0.0
     container_name: log
-    ports:
-      - "3000:3000"
+    environment:
+      - SOCKET_CLIENT=http://local.log.com
+      - SOCKET_SERVER_CONNECT=http://log:3000
     restart: always

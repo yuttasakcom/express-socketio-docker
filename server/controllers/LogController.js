@@ -1,7 +1,7 @@
 const io = require('socket.io-client')
 
 exports.create = (req, res, next) => {
-  const socket = io('http://localhost:3000')
+  const socket = io(process.env.SOCKET_SERVER_CONNECT)
   socket.emit('sendLog', {
     meta: {name: 'Yo'}
   })

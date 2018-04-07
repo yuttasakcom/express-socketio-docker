@@ -6,7 +6,7 @@ import App from './App'
 
 Vue.config.productionTip = false
 
-Vue.use(VueSocketIO, socketIOClient('http://localhost:3000'))
+Vue.use(VueSocketIO, socketIOClient(process.env.SOCKET_CLIENT))
 
 new Vue({
   el: '#app',
